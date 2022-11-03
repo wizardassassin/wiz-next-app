@@ -27,7 +27,7 @@ export default function RootLayout({
             </div>
             <div>
               <a
-                href="https://github.com/wizardassassin/next-tutorial"
+                href="https://github.com/wizardassassin/wiz-next-app"
                 target="_blank"
                 rel="noopener noreferrer"
               >
