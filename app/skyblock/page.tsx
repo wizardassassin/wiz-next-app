@@ -5,8 +5,12 @@ export default async function SkyblockPage() {
     <div>
       <h1>Skyblock Page</h1>
       <p>Some Content</p>
-      <Link href="/skyblock/bazaar">Bazaar</Link>
-      <Link href="/skyblock/auctions">Auctions</Link>
+      <div>
+        <Link href="/skyblock/bazaar">Bazaar</Link>
+      </div>
+      <div>
+        <Link href="/skyblock/auctions">Auctions</Link>
+      </div>
     </div>
   );
 }
