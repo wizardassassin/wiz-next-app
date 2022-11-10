@@ -1,6 +1,4 @@
-import { sleep } from "./utils";
-
-export interface ItemObj {
+export interface BItemObj {
   productID: string;
   sellPriceSum: number;
   buyPriceSum: number;
@@ -15,9 +13,8 @@ export async function getBazaar() {
     // cache: "no-store",
     next: { revalidate: 60 },
   });
-  await sleep(0);
   const json = await res.json();
-  const bazaarArr: ItemObj[] = [];
+  const bazaarArr: BItemObj[] = [];
   for (const key in json.products) {
     const quick_status = json.products[key].quick_status;
     bazaarArr.push({

@@ -48,11 +48,7 @@ header.header div:hover {
   transform: scale(1.1);
 }
 
-footer.footer {
-  padding: 16px 0;
-}
-
-a[target="_blank"]::after {
+header.header a[target="_blank"]::after {
   display: inline-block;
   content: url(/external-link.svg);
   position: absolute;
@@ -60,6 +56,10 @@ a[target="_blank"]::after {
   margin: 2px 3px 0px 5px;
 }
 
-div:has(a[target="_blank"]) {
+header.header div:has(a[target="_blank"]) {
   margin-right: 35px;
+}
+
+footer.footer {
+  padding: 16px 0;
 }

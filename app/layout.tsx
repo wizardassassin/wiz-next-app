@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-head-element */
 
-import Link from "next/link";
+import Header from "./header";
+
 import "./globals.css";
 
 export default function RootLayout({
@@ -12,30 +13,7 @@ export default function RootLayout({
     <html>
       <head></head>
       <body>
-        <header className="header">
-          <nav>
-            <div>
-              <h1>
-                <Link href="/">Home</Link>
-              </h1>
-            </div>
-            <div>
-              <Link href="/about">About</Link>
-            </div>
-            <div>
-              <Link href="/skyblock">Skyblock</Link>
-            </div>
-            <div>
-              <a
-                href="https://github.com/wizardassassin/wiz-next-app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Source
-              </a>
-            </div>
-          </nav>
-        </header>
+        <Header />
         <main>{children}</main>
         <footer className="footer">Hey</footer>
       </body>

@@ -1,25 +1,41 @@
 import { getAuctions, AItemObj } from "utils/auctions";
+import { getTranslations, TItemObj } from "utils/translations";
 
 export default async function AuctionsPage() {
-  const data = await getAuctions();
+  const dataP = getAuctions();
+  const translationsP = getTranslations();
+
+  const data = await dataP;
+  const translations = await translationsP;
 
   return (
     <div>
       <h1>Auctions Page</h1>
       <p>Some Content</p>
       <div>
-        {data.map((obj) => {
-          return <Item2 key={obj.productID} data={obj} />;
+        {data.auctionArr.map((item) => {
+          return (
+            <Item2
+              key={item.productID}
+              data={item}
+              name={translations.TranslationsObj?.[item.productID]}
+            />
+          );
         })}
       </div>
     </div>
   );
 }
 
-function Item2({ data }: { data: AItemObj }) {
+function Item2({ data, name }: { data: AItemObj; name: TItemObj | undefined }) {
+  let displayName = name?.name;
+  displayName ??= data.productID;
+  if (displayName === data.productID) {
+    console.log(data.productID);
+  }
   return (
     <details>
-      <summary>{data.productID}</summary>
+      <summary>{displayName}</summary>
       <p>{data.bin}</p>
     </details>
   );

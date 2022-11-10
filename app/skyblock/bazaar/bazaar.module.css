@@ -1,3 +1,35 @@
 .h1 {
   color: red;
 }
+
+.BazaarItemContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.BazaarItem {
+  display: inline-block;
+  width: 250px;
+  aspect-ratio: 1 / 1;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 25px;
+  box-shadow: 0px 0px 5px 4px rgba(128, 128, 128, 0.685);
+  text-shadow: 1px 1px 5px rgba(128, 128, 128, 0.685);
+  transition: 0.3s;
+}
+
+.BazaarItem:hover {
+  transform: scale(1.05);
+}
+
+.BazaarItem > h4 {
+  margin: 0px;
+}
+
+.BazaarItem > p {
+  margin: 0px 0px;
+}

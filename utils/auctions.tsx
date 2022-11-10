@@ -13,5 +13,5 @@ export async function getAuctions() {
   for (const key of keys) {
     auctionArr.push({ productID: key, bin: json[key] });
   }
-  return auctionArr;
+  return { lastUpdated: -1, auctionArr };
 }
